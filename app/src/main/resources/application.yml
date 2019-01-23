@@ -1,0 +1,26 @@
+approach: Imperative
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:globant
+    platform: h2
+    username: globant
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
+  flyway:
+    check-location: false
+    locations: classpath:db/migration
+    enabled: true
+
+h2:
+  console:
+    enabled: true
